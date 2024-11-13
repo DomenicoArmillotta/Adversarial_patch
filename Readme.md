@@ -57,6 +57,11 @@ Instead in this second example you can see , how the heat maps turn out to be co
 The gradient is a three-component vector (one for each channel) that represents the direction and magnitude of change needed. For example, a positive gradient value for a color channel indicates that increasing the intensity of that channel (i.e., making that channel “brighter”) would reduce loss, while a negative value indicates that we should decrease it.
 This means that the value of each channel (red, green, blue) is increased or decreased according to the sign of the gradient and its magnitude, controlling the intensity of each color.
 
+Note : 
+
+During the training of the patch , is decreased the loss as is possible to see in the plot. This mean that the patch is more efficent than the beginning of the training , the optimal patch should have loss equal to zero.
+![Loss Training](img/loss_over_iteration.png)
+
 ## What I expected :
 - From the results I expected the network to misclassify by identifying each image with the target class equal to 5 (French_horn) , but this did not happen , in fact it randomly misclassifies. This could be due to the few cycles the patch had for specialization. An attempt will be made to increase the number of cycles for the update.
 - It was also expected that the heat maps of any image with the patch would be similar to the heat map of an image with the same target class, thus French_horn. 
