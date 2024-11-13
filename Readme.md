@@ -49,7 +49,15 @@ Instead in this second example you can see , how the heat maps turn out to be co
 
 ![2 Grad-CAM wrong object](img/wrong_grad_2.png)
 
-### What I expected :
+## How work the Patch Update
+
+1. We pass a batch of images through the model with the patch applied, calculate the loss between the model output and the desired target class.
+2. By performing loss.backward(), we calculate the gradient of the loss with respect to each pixel. This gradient indicates the “direction” in which the value of each pixel must change to reduce the loss and move closer to the target for each channel 
+3. The average gradient for each channel in the cell (y, x) is then calculated, resulting in a single value for each channel (R, G, B) that is then applied to all pixels in the cell (This keeps the color uniform within the cell)
+The gradient is a three-component vector (one for each channel) that represents the direction and magnitude of change needed. For example, a positive gradient value for a color channel indicates that increasing the intensity of that channel (i.e., making that channel “brighter”) would reduce loss, while a negative value indicates that we should decrease it.
+This means that the value of each channel (red, green, blue) is increased or decreased according to the sign of the gradient and its magnitude, controlling the intensity of each color.
+
+## What I expected :
 - From the results I expected the network to misclassify by identifying each image with the target class equal to 5 (French_horn) , but this did not happen , in fact it randomly misclassifies. This could be due to the few cycles the patch had for specialization. An attempt will be made to increase the number of cycles for the update.
 - It was also expected that the heat maps of any image with the patch would be similar to the heat map of an image with the same target class, thus French_horn. 
 
