@@ -12,8 +12,8 @@ Because I wanted the patches to be printable, they were composed of generally 10
 After few iteration the patch change according to gradient of the choosed class , in this case the '0' class. As we can see the color of the cells changes with the number of iterations , going to highlight a refinement of the patch. At the creation stage, the patch is inserted randomly within the image.
 
 Example of patch : 
-![Patch after 10 iteration](img/1cicle.png)
-![Patch after 100 iteration](img/10cicle.png)
+![Patch after 10 iteration](img/patch10.png)
+![Patch after 100 iteration](img/patch200.png)
 
 ## Example of Classified object
 
