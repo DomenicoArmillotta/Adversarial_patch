@@ -2,7 +2,10 @@
 
 Useful project to discover various adversarial patch creation techniques for neural networks , which can missclassify and cheat object detectors and object classifiers. Multiple networks , multiple techniques , will be analyzed and details and conclusions will be evaluated for each one.
 
-![Patch after 10 iteration](img/video.mp4)
+
+
+https://github.com/user-attachments/assets/a44d1d41-174d-4343-a98b-10f437e42dad
+
 
 
 # Static Patch
